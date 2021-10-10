@@ -1,0 +1,54 @@
+@use '../fontdation/base';
+
+.p-thanks{
+    background-image: url("../img/machinaka.jpg");
+    background-size: cover;
+    background-position: 40% center;
+    color: white;
+    position: relative;
+    &::before{
+        @include base.buttonBefore($wd:100%,$hi:100%);
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+        @include base.media_tablet{
+            width: 600px;
+            top:0;
+            left: calc(100% - 600px);
+        }
+        @include base.media_PC{
+            width: 60%;
+            left: 40%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    }
+    &__wrapper{
+        padding: 16px;
+        position: relative;
+        z-index: 1;
+        @include base.media_tablet{
+            width:600px;
+            margin-left: calc(100% - 600px);
+        }
+        @include base.media_PC{
+            width: 60%;
+            margin-left:40%;
+            padding: 32px;
+        }
+    }
+    &__text{
+        margin:10px 16px 10px 0;
+        span{
+            color:#F178B6;
+            line-height: 5px;
+        }
+        @include base.media_PC{
+            margin-right: 32px;
+        }        
+    }
+    &__info{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-right: 16px;
+    }
+}

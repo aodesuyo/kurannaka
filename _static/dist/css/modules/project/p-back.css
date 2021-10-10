@@ -1,0 +1,77 @@
+html {
+  font-size: 62.5%;
+  font-family: "Shippori Mincho", serif;
+  color: #101B24;
+  font-weight: normal;
+  scroll-behavior: smooth;
+  background-color: #F8F4E7;
+}
+
+h2, h3, h4 {
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.u-back--green {
+  background-color: #274000;
+}
+
+.u-back--blown {
+  background-color: #525053;
+}
+
+.u-back--blue {
+  background-color: #29516e;
+}
+
+.u-back--navy {
+  background-color: #0d2030;
+}
+
+.u-back--skyblue {
+  background-color: #bdd6ce;
+}
+
+.u-font--green {
+  color: #274000;
+}
+.u-font--green::before {
+  border-color: #274000 transparent transparent transparent;
+}
+
+.u-font--blown {
+  color: #525053;
+}
+.u-font--blown::before {
+  border-color: #525053 transparent transparent transparent;
+}
+
+.u-font--blue {
+  color: #29516e;
+}
+.u-font--blue::before {
+  border-color: #29516e transparent transparent transparent;
+}
+
+.u-font--navy {
+  color: #0d2030;
+}
+.u-font--navy::before {
+  border-color: #0d2030 transparent transparent transparent;
+}
+
+.u-font--skyblue {
+  color: #bdd6ce;
+}
+.u-font--skyblue::before {
+  border-color: #bdd6ce transparent transparent transparent;
+}
+/*# sourceMappingURL=p-back.css.map */

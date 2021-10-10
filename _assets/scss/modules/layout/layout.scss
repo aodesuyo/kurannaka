@@ -1,0 +1,96 @@
+@use '../fontdation/base';
+
+.l-header{
+    width: 100%;
+    height: 60px;
+    padding: 0 15px;
+    position: sticky;
+    top:0;
+    left: 0;
+    z-index: 3;
+    @include base.media_tablet{
+        @include base.header_tablet;
+        padding: 10px 30px;
+    }
+}
+.l-menu{
+    height:calc(100vh - 60px);
+    width:100vw;
+    @include base.media_tablet{
+        height: calc(100vh - 80px);
+    }
+
+}
+.l-hero{
+    height:calc(80vh - 60px);
+    width: 100%;
+    img{
+        height: 100%;
+    }
+    @include base.media_tablet{
+        height: 80vh;
+    }
+    &--history{
+        height:calc(80vh - 60px);
+        width: 100%;
+        @include base.media_tablet{
+            @include base.layout_tablet($tb:0px);
+        }
+        @include base.media_PC{
+            @include base.layout_PC($tb:0px);
+        }
+        img{
+            height: 100%;
+        }
+        @include base.media_tablet{
+            height: 80vh;
+        }
+    }
+}
+.l-main{
+    width: 100%;
+}
+.l-about{
+    margin:150px 16px 100px 32px;
+    @include base.media_tablet{
+        width: 100%;
+        margin: 100px 32px 100px 32px;
+        @include base.layout_PC;
+    }
+}
+.l-content{
+    margin: 100px 16px;
+    @include base.media_tablet{
+        @include base.layout_tablet;
+    }
+    @include base.media_PC{
+        @include base.layout_PC;
+    }
+}
+.l-instagram{
+    margin:100px 16px;
+    @include base.media_tablet{
+        @include base.layout_tablet;
+    }
+    @include base.media_PC{
+        @include base.layout_PCwide;
+    }
+}
+
+.l-footer{
+    height: 60px;
+    text-align: center;
+    @include base.media_tablet{
+        @include base.header_tablet;
+    }
+}
+.l-step{
+    margin:20vh 16px 100px 32px;
+    @include base.media_tablet{
+        @include base.layout_tablet;
+    }
+}
+.l-history{
+    width: 100%;
+    margin: 100px 0;
+}

@@ -1,0 +1,75 @@
+@use '../fontdation/base';
+
+.p-history{
+    background-color: base.$ivory;
+    &__end{
+        min-height: 240px;
+        margin:0px 32px;
+        display: flex;
+        justify-content: center;
+        color: white;
+        position: relative;
+        background-color: base.$skyblue;
+        @include base.media_tablet{
+            @include base.layout_tablet($mw:850px,$tb:0px);
+        }
+        @include base.media_PC{
+            @include base.layout_PC($tb:0px);
+        }
+    }
+    &__text{
+        position: relative;
+        width: 30%;
+        text-align: center;
+        margin-top: 24px;
+        &--sub{
+            text-align: center;
+            font-size:base.$xxs;
+        }
+        @include base.media_PC{
+            margin-top: 12px;
+        }
+    }
+    &__title{
+        min-height: 180px;
+        writing-mode: vertical-rl;
+        @include base.center;
+        @include base.textFont(base.$xs,base.$l,base.$xl);
+        @include base.media_tablet{
+            min-height: 280px;
+        }
+        @include base.media_PC{
+            min-height: 400px;
+        }
+    }
+    &__img{
+        width: 80%;
+        text-align: center;
+        margin:0 16px;
+        max-width: 400px;
+        img{
+            width: calc(100% - 32px);
+            height: auto;
+            margin:32px 16px;
+            @include base.media_tablet{
+                margin-bottom: 64px;
+            }
+        }
+    }
+    &__greet{
+        position: absolute;
+        display: block;
+        bottom: 10px;
+        right: 10vw;
+        span::after {
+            content: "\A";
+            white-space: pre;
+            @include base.media_tablet{
+                white-space: normal;
+            }
+        }
+    }
+    &__top{
+        color:transparent;
+    }
+}

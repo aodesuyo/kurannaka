@@ -1,0 +1,71 @@
+html {
+  font-size: 62.5%;
+  font-family: "Shippori Mincho", serif;
+  color: #101B24;
+  font-weight: normal;
+  scroll-behavior: smooth;
+  background-color: #F8F4E7;
+}
+
+h2, h3, h4 {
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.p-attention {
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #AEAAB2), color-stop(30%, #525054));
+  background: linear-gradient(to bottom right, #AEAAB2 50%, #525054 30%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 84px 22px;
+  color: white;
+  position: relative;
+}
+.p-attention__title {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  letter-spacing: 0.8rem;
+  mix-blend-mode: difference;
+}
+.p-attention__list {
+  list-style-type: disc;
+  max-width: 420px;
+}
+.p-attention__detail {
+  margin: 0 36px 36px;
+}
+.p-attention__detail :first-child {
+  border-bottom: 1px solid white;
+  display: inline;
+  line-height: 2em;
+  font-size: 1.8rem;
+}
+.p-attention__detail p {
+  line-height: 2em;
+}
+@media only screen and (min-width: 768px) {
+  .p-attention {
+    padding: 65px 120px 65px 65px;
+  }
+  .p-attention__list {
+    max-width: 650px;
+  }
+}
+/*# sourceMappingURL=p-attention.css.map */

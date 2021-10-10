@@ -1,0 +1,35 @@
+@use '../fontdation/base';
+
+@each $colorname, $color in base.$colorList{
+    .u-border--#{$colorname}{
+        border-color: $color;
+    }
+    .u-back--#{$colorname}{
+        background-color: $color;
+    }
+    .u-font--#{$colorname}{
+        color: $color;
+    &::before{
+        border-color: $color transparent transparent transparent;
+    }}
+}
+.u-navigation__contents{
+    &-blown{
+        span{
+            border-color:transparent transparent base.$blown_clear transparent;
+        }
+    }
+    &-green{
+        span{
+            border-color:transparent transparent base.$green_clear transparent;
+            @include base.media_tablet{
+                margin-right: 30px;
+            }        
+        }
+    }
+    &-navy{
+        span{
+            border-color:transparent transparent base.$navy_clear transparent;            
+        }
+    }
+}

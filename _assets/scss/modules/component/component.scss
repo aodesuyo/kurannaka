@@ -1,0 +1,99 @@
+@use '../fontdation/base';
+
+.c-button{
+    display: inline-block;
+    padding-bottom: 3px;
+    position: relative;
+    font-size:base.$s;
+    &::before{
+        @include base.buttonBefore($wd:calc(100% + 20px));
+    }
+    &::after{
+        @include base.buttonAfter($btm:7px,$ri:-23px,$deg:45deg);
+    }
+    &::after,&::before{
+        background-color: base.$black;
+    }   
+    &--top{
+        font-size:base.$s;
+        position: absolute;
+        bottom: 2vw;
+        right: 5vw;
+        writing-mode: vertical-rl;
+        transition-duration:.8s;
+        &::before{
+            @include base.buttonBefore($wd:1.5px,$hi:calc(100% + 20px));
+            right: -3px;
+        }
+        &::after{
+            @include base.buttonAfter($ri:-4.2px);
+            top:-13px;
+        }
+        &::after,&::before{
+            background-color: #fff;
+        }
+    }
+}
+.c-sns{
+    margin: 8px 0;
+    display: flex;
+    li{
+        margin-right: 10px;
+        a{
+            height: 46px;
+        }
+        img{
+            height: 32px;
+            @include base.media_PC{
+                width: 30px;
+                height: auto;
+            }
+        }
+        span{
+            display: none;
+            @include base.media_PC{
+                display: inline-block;
+                font-size: 2.8rem;
+                margin: 10px;
+            }
+        }
+    }
+}
+.c-map{
+    width: 50%;
+    @include base.media_tablet{
+        height: 250px;
+    }
+    @include base.media_PC{
+        height:300px;
+    }
+}
+.c-scroll{
+    @include base.scroll(pathmove);
+    bottom: 150px;
+    right: 70px;
+    &::after{
+        @include base.buttonAfter($btm:6px,$ri:-15px,$hi:2px);
+    }
+    @keyframes pathmove{
+        0%{
+          bottom:30px;
+          height: 150px;
+          opacity: 0;
+        }
+        30%{
+          height:150px;
+          opacity: 1;
+        }
+        80%{
+            height:100px;
+            opacity: 1;
+        }
+        100%{
+          height:10px;
+          bottom:0;
+          opacity: 0;
+        }
+      }
+  
+}

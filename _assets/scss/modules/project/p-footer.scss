@@ -1,0 +1,10 @@
+@use '../fontdation/base';
+
+.p-footer{
+    background-color: base.$navy;
+    color: white;
+    padding-top: 20px;
+    @include base.media_tablet{
+        padding-top: 25px;
+    }
+}

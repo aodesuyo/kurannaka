@@ -1,0 +1,117 @@
+@use '../fontdation/base';
+
+.p-menu{
+    background-color:base.$ivory;
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 5;
+    @include base.media_tablet{
+        top: 80px;
+    }
+    &__button{
+        transition: all .4s;
+        span{
+            font-size: 0px;
+            @include base.hamburger;
+            position:relative;
+        }
+        ::before{
+            @include base.hamburger;
+            position: absolute;
+            top: -8px;
+            content: "";
+            @include base.media_PC{
+                top: -10px;
+            }            
+        }
+        ::after{
+            @include base.hamburger;
+            position: absolute;
+            top:8px;
+            content: "";
+            @include base.media_PC{
+                top: 10px;
+            }
+        }
+        &.js-active{
+            span{
+                height: 0px;
+            &::before{
+                transform: translateY(6px) rotate(-45deg);
+                @include base.media_PC{
+                    top:-6px;
+                }
+                }
+            &::after{
+                transform: translateY(-10px) rotate(45deg);
+                }
+            }
+        }
+    }
+    &__wrapper{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin: 16px;
+        @include base.media_tablet{
+            margin: 32px;
+        }
+    }
+    &__list{
+        writing-mode: vertical-rl;
+        &.js-active{
+            display: block;
+            animation-name: menuOpen;
+            animation-duration: 0.5s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            @keyframes menuOpen {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }        
+        }
+    }
+    &__text{
+        font-size: min(4vw,30px);
+        margin:0 3vw;
+        cursor: pointer;
+    }
+    &__info{
+        writing-mode: horizontal-tb;
+        width: 50%;
+        height: 50%;
+        margin-top: 35vh;
+        @include base.media_tablet{
+            height: 30vh;
+            margin-top: 50vh;
+            display: flex;
+        }
+        animation-name: infoappear;
+        animation-duration: 0.5s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        @keyframes infoappear {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+    &__map{
+        min-width: min(300px,100%);
+        @include base.media_tablet{
+            width: 40%;
+            max-height: 100%;
+        }
+    }
+}

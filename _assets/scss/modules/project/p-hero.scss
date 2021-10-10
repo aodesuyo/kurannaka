@@ -1,0 +1,204 @@
+@use '../fontdation/base';
+
+.p-hero{
+    background-color: base.$ivory;
+    position: relative;
+    @include base.media_tablet{
+        display: flex;    
+    }
+    img{
+        @include base.img;
+        @include base.media_tablet{
+        width: 70vw;
+        }
+        animation-name: imgMove;
+        animation-duration: 10s;
+        animation-fill-mode: forwards;
+        @keyframes imgMove {
+            0% {
+                object-position: left center;
+            }
+            100% {
+                object-position: center center;
+        }
+    }        
+    }
+    &--about{
+        @extend .p-hero;
+        height: 100vw;
+        max-height: 500px;
+        @include base.media_tablet{
+            display: block;
+        }
+        img{
+            @include base.media_tablet{
+                width: 100%;
+            }
+            @include base.media_PC{
+                height: 100%;
+                width: 80vw;
+                object-fit: cover;                
+            }
+         }
+    }
+    &--history{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        &::after{
+            @include base.buttonAfter($ri:0,$wd:70vw,$hi:30vh,$deg:0deg);
+            top: 40vh;
+            z-index: 0;
+            max-width: 700px;
+            background-color: base.$green;
+            @include base.media_tablet{
+                top:50vh;
+            }
+        }
+    }
+    &__img{
+        width: 80%;
+        height:50vh;
+        margin: 3vw;
+        text-align: center;
+        z-index: 1;
+        img{
+            @include base.img($wd:80%,$hi:80%,$tb:bottom,$lr:left);
+        }
+        @include base.media_tablet{
+            height: 80%;
+        }
+        @include base.media_PC{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__text{
+        height: max(50vh,360px);
+        margin: 0 32px;
+        background-color: #fff;
+        writing-mode: vertical-rl;
+        position: relative;
+        padding: 16px;
+        z-index: 2;
+        @include base.media_tablet{
+            height: 400px;
+        }
+        @include base.media_PC{
+            height: 80vh;
+        }
+    }
+    &__time{
+        writing-mode:horizontal-tb;
+        position: absolute;
+        bottom: 28px;
+        left: 0;
+        z-index: 1;
+        @include base.media_tablet{
+            left: 8px;
+            width: 150px;
+        }
+    }
+    &__scroll{
+        @include base.scroll(pathmoveHistory,0s);
+        bottom: 150px;
+        right: max(-5vw,-16px);
+        &::after{      
+            @include base.buttonAfter($btm:6px,$ri:-15px,$hi:2px);
+        }
+        @keyframes pathmoveHistory{
+            0%{
+              bottom:30px;
+              right: max(-5vw,-16px);
+              height: 150px;
+              opacity: 0;
+            }
+            30%{
+              height:150px;
+              opacity: 1;
+            }
+            80%{
+                height:100px;
+                opacity: 1;
+            }
+            100%{
+              height:10px;
+              bottom:-2vh;
+              opacity: 0;
+            }
+      }
+    
+    }
+
+    &__title{
+        position: absolute;
+        top: 60px;
+        left:calc(50% - 35px);
+        writing-mode: vertical-rl;
+        background-color: #fff;
+        @include base.media_tablet{
+        position: initial;
+        margin: auto;
+        background-color: transparent;
+        }
+        &--about{
+            @extend .p-hero__title;
+            left: 48px;
+            @include base.media_tablet{
+                top:100px;
+                left: 15vw;
+                position: absolute;                
+            }
+            @include base.media_PC{
+                left: 20vw;
+            }
+            animation-name: titleMove;
+            animation-duration: 1s;
+            animation-fill-mode:forwards;
+            transform-origin: top;
+            @keyframes titleMove {
+                    0%{
+                        color: transparent;
+                        background-color: transparent;
+                        transform: scaleY(0);
+                    }
+                    99%{
+                        color: transparent;
+                        background-color: transparent;
+                        transform: scaleY(1);
+                    }
+                   100% {
+                       opacity: 1;
+               }            
+               }
+            &::before{
+                @include base.buttonBefore($wd:100%,$hi:100%);
+                top: 0;
+                display: block;
+                background-color: white;
+                animation-name: boxMove;
+                animation-duration: 0.3s;
+                animation-fill-mode: forwards;
+                transform-origin: top;
+                z-index: -1;
+                opacity: 0;
+                @keyframes boxMove {
+                    0% {
+                        opacity: 1;
+                        transform: scaleY(0);
+                    }
+                    99%{
+                        opacity: 1;
+                        transform: scaleY(1);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: scaleY(1);
+                    }
+                } 
+            }
+        }
+    }    
+}

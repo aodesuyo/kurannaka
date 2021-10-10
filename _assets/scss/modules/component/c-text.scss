@@ -1,0 +1,17 @@
+@use '../fontdation/base';
+
+.c-text{
+    @include base.textFont;
+    &--about{
+        @include base.textFont(min(4vw,18px),base.$s,base.$l);
+    }
+    &--navgation{
+        @include base.textFont($sp:base.$s,$pc:base.$l);
+    }
+    &--xs{
+        @include base.textFont(base.$xxs,base.$xs);
+    }
+    &--history{
+        @include base.textFont(min(#{base.$xs},3.5vw),base.$s,base.$m);
+    }
+}

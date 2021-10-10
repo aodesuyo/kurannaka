@@ -1,0 +1,134 @@
+@use '../fontdation/base';
+@use './component.scss';
+.c-history{
+    &__category{
+        &--left{
+        width: 100%;
+        color: white;
+        position: relative;
+        clip-path: polygon(10% 0%, 100% 0, 100% 100%, 0% 100%);
+        }
+        &--right{
+            @extend .c-history__category--left;
+            clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+        }
+        &--text{
+            width: 80%;
+            margin-left: 10%;
+            @include base.media_tablet{
+                margin-left: 15%;
+            }
+        }
+    }
+    &__title{
+        position: absolute;
+        left:-21px;
+        width: calc(100% + 21px);
+        @include base.media_tablet{
+            max-width:calc(750px + calc(15% - 20px));
+        }
+        @include base.media_PC{
+            width:calc(920px + calc(15% - 20px));
+        }
+        &--item{
+            width: 100%;
+            background-color: base.$gray;
+            font-size: base.$xs;
+            padding: 5px 0px 5px 42px;
+            position: relative;
+            &::before{
+                @extend %addItem;
+                left: 8px;
+                top:8px;
+                border-style: solid;
+                border-width: 20.8px 12px 0 12px;
+                @include base.media_tablet{
+                    top:14px;
+                    left: 10px;
+                }
+            }
+            @include base.media_tablet{
+                font-size: base.$l;
+                padding-left:calc(20px + min(4vw, 64px));
+            }
+            @include base.media_PC{
+                font-size:base.$xl;
+            }
+        }    
+    }
+    &__item{
+        padding: 36px 0px 10px ;
+        border-left: dashed 2px base.$gray;
+        position: relative;
+    }
+    &__list{
+        width: 80%;
+        margin: 0 36px 0 15%;
+        @include base.media_tablet{
+            @include base.layout_tablet($tb:0px);
+        }
+        @include base.media_PC{
+            @include base.layout_PC($tb:0px);
+        }
+    }
+    &__desc{
+        margin:48px 0px 16px min(4vw,64px);
+        @include base.media_tablet{
+            margin-top: 64px;
+        }
+        @include base.media_PC{
+            margin-top: 86px;
+            margin-left: 64px;
+        }
+        img{
+            @include base.img($hi:auto,$tb:center);
+            max-width: 750px;
+            max-height: 350px;
+        &:last-child{
+            max-height: 200px;
+            max-width: 450px;
+            text-align: center;
+            margin:0px auto;
+            display: block;
+            }
+        @include base.media_tablet{
+            object-position: center;
+            }
+        }
+    }
+    &__text{
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: calc(70vh + 32px);
+        p{
+            height: 35vh;
+            margin: 2vw 0 2vw 10px;
+            &:last-child{
+                margin: 2vw 0;
+            }
+            @include base.media_tablet{
+                height: 45vh;
+            }
+            @include base.media_PC{
+                height: 45vh;
+            }
+        }
+        @include base.media_tablet{
+            height: calc(45vh + 32px);            
+            justify-content: left;
+        }
+        &--short{
+            @extend .c-history__text;
+            height: calc(32vh + 32px);
+            p{
+                height: 35vh;
+                margin: 2vw 0 2vw 5px;
+            }
+
+        }
+    }
+}

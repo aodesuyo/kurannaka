@@ -1,0 +1,66 @@
+@use '../fontdation/base';
+
+.p-buy{
+    input[type=radio]{
+         display: none;
+    }
+    &__label{
+        text-align: center;
+        margin:10px 0 10px -16px;
+    }
+    label{
+        cursor:pointer;
+        text-decoration: none;
+        padding: 10px;
+        display: inline-block;
+        width: 20vw;
+        max-width: 150px;
+        height: 40px;
+        border-radius:0%;
+        background: white;
+        margin: 0 10px;
+        transform: scale(1,1);
+        transition-duration:.5s;
+        font-size: 1.6rem;
+        color: base.$gray;
+    }
+    &__wrap{
+        overflow: hidden;
+    }
+    &__slide{
+        width: 300%;
+        display: flex;
+        overflow: hidden;
+        transition-duration:.8s;
+        section{
+            margin: 0 auto;    
+        }
+    }
+    #buy1:checked {
+        &~ .p-buy__wrap .p-buy__slide{
+        margin-left: 0%;
+        }
+        &~ .p-buy__label label:nth-child(1){
+            background-color: base.$gray;
+            color: white;
+        }
+    }
+    #buy2:checked {
+        &~ .p-buy__wrap .p-buy__slide{
+        margin-left: -100%;
+        }
+        &~ .p-buy__label label:nth-child(2){
+            background-color: base.$gray;
+            color: white;
+        }
+    }
+    #buy3:checked {
+        &~ .p-buy__wrap .p-buy__slide{
+        margin-left: -200%;
+        }
+        &~ .p-buy__label label:nth-child(3){
+            background-color: base.$gray;
+            color: white;;
+        }
+    }
+}

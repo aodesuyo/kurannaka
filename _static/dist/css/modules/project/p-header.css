@@ -1,0 +1,45 @@
+html {
+  font-size: 62.5%;
+  font-family: "Shippori Mincho", serif;
+  color: #101B24;
+  font-weight: normal;
+  scroll-behavior: smooth;
+  background-color: #F8F4E7;
+}
+
+h2, h3, h4 {
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.p-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(189, 214, 206, 0.7);
+}
+.p-header__title {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  width: 100%;
+  margin-top: 5px;
+  font-weight: 400;
+}
+.p-header__title span {
+  font-size: 1.2rem;
+}
+.p-header.js-active {
+  background-color: #bdd6ce;
+}
+/*# sourceMappingURL=p-header.css.map */

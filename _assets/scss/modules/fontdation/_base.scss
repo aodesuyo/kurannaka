@@ -1,0 +1,175 @@
+
+$black:#101B24;
+$ivory:#F8F4E7;
+$blown:#525053;
+$green:#274000;
+$blue:#29516e;
+$navy:#0d2030;
+$skyblue:#bdd6ce;
+$gray:#C4C4C4;
+$skybule_clear:rgba(189,214,206,0.7);
+$blown_clear:rgba(82,80,83,0.5);
+$green_clear:rgba(39,64,0,0.5);
+$navy_clear:rgba(13,32,48,0.5);
+
+$xxxs:1.2rem;
+$xxs:1.4rem;
+$xs:1.6rem;
+$s:1.8rem;
+$m:2.0rem;
+$l:2.4rem;
+$xl:3.6rem;
+$xxl:4.8rem;
+
+$spmargin:100px 16px;
+
+$colorList:(
+    green:$green,
+    blown:$blown,
+    blue:$blue,
+    navy:$navy,
+    skyblue:$skyblue
+);
+
+@mixin media_PC($width-media:1390px){
+  @media only screen and
+    (min-width:$width-media){
+    @content;
+  }
+}
+
+@mixin media_tablet($width-media:768px){
+@media only screen and
+  (min-width:$width-media){
+  @content; 
+  }
+}
+
+@mixin titleFont($sp:$l,$tb:$xl,$pc:$xxl){
+  font-size:$sp;
+  @include media_tablet{
+      font-size:$tb;
+  }
+  @include media_PC{
+      font-size:$pc;
+  }
+}
+@mixin textFont($sp:$xs,$tb:$s,$pc:$m){
+  font-size:$sp;
+  @include media_tablet{
+      font-size:$tb;
+  }
+  @include media_PC{
+      font-size:$pc;
+  }
+}  
+
+@mixin hamburger{
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color:$black;
+    @include media_PC{
+      width: 36px;
+    }
+}
+@mixin header_tablet{
+  height: 80px;
+}
+@mixin layout_tablet($mw:750px,$tb:100px,$lr:auto){
+  max-width: $mw;
+  margin: $tb $lr;
+}
+@mixin layout_PC($mw:920px,$tb:100px,$lr:auto) {
+  max-width: $mw;
+  margin: $tb $lr;
+}
+@mixin  layout_PCwide{
+  max-width: 1300px;
+  margin: 150px auto;
+}
+@mixin center{
+  position: absolute;
+  top: 50%; /*親要素を起点に上から50%*/
+  left: 50%;  /*親要素を起点に左から50%*/
+  transform: translateY(-50%) translateX(-50%); /*要素の大きさの半分ずつを戻す*/
+}
+@mixin scroll($name,$delay:3s){
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background-color: #fff;
+  animation: $name 1.4s ease-in-out infinite;
+  animation-delay : $delay;
+  opacity:0;
+  transition-duration: 1s;
+  &::after{
+      background-color: white;
+    }
+}
+
+@mixin buttonBefore($btm:0,$lf:0,$wd,$hi:1.5px){
+  position: absolute;
+  content: "";
+  bottom:$btm;
+  left:$lf;
+  width: $wd;
+  height: $hi;
+}
+
+@mixin buttonAfter($btm:0,$ri,$wd:20px,$hi:1px,$deg:-45deg){
+  position: absolute;
+  content: "";
+  bottom:$btm;
+  right: $ri;
+  width: $wd;
+  height: $hi;
+  transform: rotate($deg); 
+}
+
+@mixin img($wd:100%,$hi:100%,$of:cover,$tb:center,$lr:center){
+  width: $wd;
+  height: $hi;
+  object-fit: $of;
+  object-position: $tb $lr;  
+}
+%buttonBefore{
+  position: absolute;
+  content: "";
+  bottom:0;
+  left: 0;
+}
+%buttonAfter{
+  position: absolute;
+  transform: rotate(-45deg); 
+  content: "";
+}
+%addItem{
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+}
+%img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+html {
+    font-size: 62.5%;
+    font-family: 'Shippori Mincho', serif;
+    color:$black;
+    font-weight: normal;
+    scroll-behavior: smooth;
+    background-color:$ivory;
+}
+h2,h3,h4{
+  font-weight: normal;
+}
+a{
+  color : inherit;
+  text-decoration : none;
+}
+ul{
+  list-style: none;
+}

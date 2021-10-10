@@ -1,0 +1,48 @@
+@use '../fontdation/base';
+
+.p-instagram{
+    @include base.media_tablet{
+        display: flex;
+    }
+    &__grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100vw;
+    overflow: hidden;
+    gap: 5vw;
+    margin-bottom: 50px;
+    grid-template-rows: 30vw 30vw 30vw;
+    @include base.media_tablet{
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 18vw 18vw;
+        gap: 2vw;
+        height: 40vw;
+    }
+    @include base.media_PC{
+        grid-template-columns: 200px 200px 200px 200px 200px;
+        grid-template-rows: 200px 200px;
+        height: 100%;
+        transform: translateY(50px);
+    }
+    }
+    &__title{
+        font-weight: normal;
+        @include base.media_tablet{
+            writing-mode: vertical-rl;
+        }
+    }
+    &__item{
+        border: solid 2px base.$black;
+    }
+    &__button{
+        margin-left: calc(100% - 200px);
+        @include base.media_tablet{
+            margin-right: calc(100% - 250px);
+            margin-left: 50px;
+        }
+        @include base.media_PC{
+            margin-top: 50px;
+        }
+    }
+}

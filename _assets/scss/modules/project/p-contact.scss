@@ -1,0 +1,38 @@
+@use '../fontdation/base';
+
+.p-contact{
+    margin: 16px 16px 32px 16px;
+    &__question{
+        border-bottom: solid 2px base.$navy_clear;
+        color:base.$navy;
+        margin: 16px 16px 16px 64px;
+        position: relative;
+        &::before{
+            content:"Q";
+            color: base.$navy_clear;
+            position: absolute;
+            top: -30px;
+            left: -64px;
+            font-size: 6.4rem;
+            
+        }
+    }
+    &__answer{
+        background-color: #fff;
+        padding:16px 16px 32px 32px;
+        position: relative;
+
+    }
+    &__other{
+        display: flex;
+        align-items: center;
+        :first-child{
+            @include base.img(30%,30%);
+            margin-right: 16px;
+        }
+        :last-child{
+            width: 70%;
+            word-break: break-word;
+        }
+    }
+}

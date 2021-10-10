@@ -1,0 +1,84 @@
+html {
+  font-size: 62.5%;
+  font-family: "Shippori Mincho", serif;
+  color: #101B24;
+  font-weight: normal;
+  scroll-behavior: smooth;
+  background-color: #F8F4E7;
+}
+
+h2, h3, h4 {
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.p-buy input[type=radio] {
+  display: none;
+}
+.p-buy__label {
+  text-align: center;
+  margin: 10px 0 10px -16px;
+}
+.p-buy label {
+  cursor: pointer;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  width: 20vw;
+  max-width: 150px;
+  height: 40px;
+  border-radius: 0%;
+  background: white;
+  margin: 0 10px;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  font-size: 1.6rem;
+  color: #C4C4C4;
+}
+.p-buy__wrap {
+  overflow: hidden;
+}
+.p-buy__slide {
+  width: 300%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+.p-buy__slide section {
+  margin: 0 auto;
+}
+.p-buy #buy1:checked ~ .p-buy__wrap .p-buy__slide {
+  margin-left: 0%;
+}
+.p-buy #buy1:checked ~ .p-buy__label label:nth-child(1) {
+  background-color: #C4C4C4;
+  color: white;
+}
+.p-buy #buy2:checked ~ .p-buy__wrap .p-buy__slide {
+  margin-left: -100%;
+}
+.p-buy #buy2:checked ~ .p-buy__label label:nth-child(2) {
+  background-color: #C4C4C4;
+  color: white;
+}
+.p-buy #buy3:checked ~ .p-buy__wrap .p-buy__slide {
+  margin-left: -200%;
+}
+.p-buy #buy3:checked ~ .p-buy__label label:nth-child(3) {
+  background-color: #C4C4C4;
+  color: white;
+}
+/*# sourceMappingURL=p-buy.css.map */

@@ -1,0 +1,81 @@
+@use '../fontdation/base';
+
+.p-about{
+    background-color:base.$ivory;
+    position: relative;
+    &__title{
+        writing-mode: vertical-rl;
+        position: absolute;
+        top: -100px;
+        right: 0;
+        z-index: 1;
+        font-weight: normal;
+        font-size: min(5.5vw,30px);
+        @include base.media_tablet{
+            font-size: base.$xl;
+            top:-70px
+        }
+        @include base.media_PC{
+            right: -100px;
+            font-size: base.$xxl;
+        }
+
+    }
+    &__sentense{
+        width: 100%;
+        height: 100%;
+        writing-mode: vertical-rl;
+        line-height: 1.5;       
+        background-color: white;
+        padding: 50px 4vw;
+        display:flex;
+        @include base.media_tablet{
+            display: block;
+            height: 500px;
+            width: auto;
+            padding: 100px 2vw;
+            margin-left:calc(100% - 700px);
+        }
+        @include base.media_PC{
+            height: 700px;
+            width: 100%;
+            margin-left: 0;
+            line-height: 1.4;
+        }
+        p:first-child{
+            margin-right: 20vw;
+            @include base.media_tablet{
+                margin-right: 120px;
+            }
+        }
+        p:last-child{
+            margin: 10px auto;
+        }
+    }
+    &__text{
+        height: 300px;
+        margin: 10px;
+        br{
+            display: block;
+            content: "";
+            margin: 20px;
+        }
+    }
+    &__img{
+        width: 72vw;
+        height: 72vw;
+        max-width: 500px;
+        max-height: 500px;
+        transform: translate(20px,-40px);
+        border: solid 25px base.$navy;
+        img{
+            @include base.img;
+        }
+        @include base.media_tablet{
+            transform: translate(40px,-80px);
+        }
+        @include base.media_PC{
+            transform: translate(-100px,-100px);
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@use '../fontdation/base';
+.p-navgation{
+    &__text{
+        height: 180px;
+        margin-right: 30px;
+        @include base.media_PC{
+            height:250px;
+        }
+    }
+    &__button{
+        font-size: base.$s;
+        padding-bottom: 5px;
+        margin-top: 10px;
+        margin-left:calc(100% - 250px);
+        @include base.media_PC{
+            margin-top: 50px;
+        }
+    }
+}

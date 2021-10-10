@@ -1,0 +1,20 @@
+@use '../fontdation/base';
+
+.c-title{
+    @include base.titleFont;
+    &--hero{
+        @include base.titleFont(min(#{base.$l},6vw),base.$l,base.$l);
+    }
+    &--navgation{
+        @include base.titleFont(base.$xl);
+    }
+    &--step{
+        @include base.titleFont(5vh);
+    }
+    &--stepAbout{
+        @include base.titleFont($sp:min(#{base.$xl},5vw),$pc:base.$xl);
+    }
+    &--sm{
+        @include base.titleFont(min(#{base.$l},6vw),base.$l,base.$xl);
+    }
+}

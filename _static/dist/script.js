@@ -1,0 +1,14 @@
+$(document).ready(function(){
+    $('.p-menu__button').on('click',function(){
+        $('.p-menu').slideToggle();
+        $(this).toggleClass('js-active');
+        $('.p-header,.p-menu__list').toggleClass('js-active');
+    });
+    $('.p-menu__button').on('click',function(){
+    if($('.p-menu__list').hasClass('js-active')){
+        $('.p-menu__list').show();
+    }else{
+        $('.p-menu__list').fadeTo(100,0);            
+    }
+    });    
+});
