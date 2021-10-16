@@ -49,7 +49,6 @@ ul {
   -webkit-transform: translateY(-50%) translateX(-50%);
           transform: translateY(-50%) translateX(-50%);
   /*要素の大きさの半分ずつを戻す*/
-  top: 100px;
   background-color: #C4C4C4;
   color: white;
   -webkit-writing-mode: horizontal-tb;
@@ -61,7 +60,6 @@ ul {
 }
 @media only screen and (min-width: 768px) {
   .p-step__about {
-    top: 150px;
     -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
             writing-mode: vertical-rl;

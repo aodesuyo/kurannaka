@@ -54,7 +54,12 @@
             max-width: 700px;
             background-color: base.$green;
             @include base.media_tablet{
+                top:30vh;
+                height: 200px;
+            }
+            @include base.media_PC{
                 top:50vh;
+                height: 220px;
             }
         }
     }

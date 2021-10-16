@@ -27,9 +27,6 @@
     img{
         height: 100%;
     }
-    @include base.media_tablet{
-        height: 80vh;
-    }
     &--history{
         height:calc(80vh - 60px);
         width: 100%;
@@ -70,10 +67,7 @@
 .l-instagram{
     margin:100px 16px;
     @include base.media_tablet{
-        @include base.layout_tablet;
-    }
-    @include base.media_PC{
-        @include base.layout_PCwide;
+        margin: 100px 64px;
     }
 }
 
@@ -89,6 +83,10 @@
     @include base.media_tablet{
         @include base.layout_tablet;
     }
+    @include base.media_PC{
+        @include base.layout_PC;
+    }
+
 }
 .l-history{
     width: 100%;

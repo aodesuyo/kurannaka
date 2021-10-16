@@ -16,7 +16,6 @@
     }
     &__about{
         @include base.center;
-        top: 100px;
         background-color: base.$gray;
         color: white;
         writing-mode: horizontal-tb;
@@ -24,7 +23,6 @@
             text-combine-upright: all;
         }
         @include base.media_tablet{
-            top:150px;
             writing-mode: vertical-rl;
             height: 200px;
         }

@@ -88,9 +88,6 @@ ul {
   .l-menu {
     height: calc(100vh - 80px);
   }
-  .l-hero {
-    height: 80vh;
-  }
   .l-hero--history {
     max-width: 750px;
     margin: 0px auto;
@@ -109,8 +106,7 @@ ul {
     margin: 100px auto;
   }
   .l-instagram {
-    max-width: 750px;
-    margin: 100px auto;
+    margin: 100px 64px;
   }
   .l-footer {
     height: 80px;
@@ -130,9 +126,9 @@ ul {
     max-width: 920px;
     margin: 100px auto;
   }
-  .l-instagram {
-    max-width: 1300px;
-    margin: 150px auto;
+  .l-step {
+    max-width: 920px;
+    margin: 100px auto;
   }
 }
 /*# sourceMappingURL=layout.css.map */

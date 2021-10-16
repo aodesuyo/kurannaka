@@ -7,12 +7,18 @@
             display: flex;
             width: calc(750px - 64px); 
         }
+        @include base.media_PC{
+            width: calc(920px - 64px); 
+        }
     }
     &__wrap{
         width: calc(100vw - 64px);
         margin: 0 auto;
         @include base.media_tablet{
             width: calc(750px - 64px);
+        }
+        @include base.media_PC{
+            width: calc(920px - 64px); 
         }
     }
     &__img{

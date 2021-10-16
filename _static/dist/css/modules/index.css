@@ -527,23 +527,49 @@ ul {
 .p-menu__map {
   min-width: min(300px, 100%);
 }
+
+.p-instagram {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 .p-instagram__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 100vw;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px 300px 300px;
+  height: calc(900px + 10vw);
   overflow: hidden;
   gap: 5vw;
   margin-bottom: 50px;
-  grid-template-rows: 30vw 30vw 30vw;
 }
 .p-instagram__title {
   font-weight: normal;
 }
 .p-instagram__item {
   border: solid 2px #101B24;
+  position: relative;
+  overflow: hidden;
 }
 .p-instagram__button {
   margin-left: calc(100% - 200px);
+}
+
+.instagram-media {
+  position: absolute;
+  top: -54px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 30%;
 }
 
 .p-about {
@@ -778,7 +804,6 @@ ul {
   -webkit-transform: translateY(-50%) translateX(-50%);
           transform: translateY(-50%) translateX(-50%);
   /*要素の大きさの半分ずつを戻す*/
-  top: 100px;
   background-color: #C4C4C4;
   color: white;
   -webkit-writing-mode: horizontal-tb;
@@ -1378,9 +1403,6 @@ ul {
   .l-menu {
     height: calc(100vh - 80px);
   }
-  .l-hero {
-    height: 80vh;
-  }
   .l-hero--history {
     max-width: 750px;
     margin: 0px auto;
@@ -1399,8 +1421,7 @@ ul {
     margin: 100px auto;
   }
   .l-instagram {
-    max-width: 750px;
-    margin: 100px auto;
+    margin: 100px 64px;
   }
   .l-footer {
     height: 80px;
@@ -1424,7 +1445,8 @@ ul {
     width: 100%;
   }
   .p-hero--history::after {
-    top: 50vh;
+    top: 30vh;
+    height: 200px;
   }
   .p-hero__img {
     height: 80%;
@@ -1463,22 +1485,12 @@ ul {
     width: 40%;
     max-height: 100%;
   }
-  .p-instagram {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
   .p-instagram__grid {
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 18vw 18vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px;
     gap: 2vw;
-    height: 40vw;
-  }
-  .p-instagram__title {
-    -webkit-writing-mode: vertical-rl;
-        -ms-writing-mode: tb-rl;
-            writing-mode: vertical-rl;
+    height: calc(600px + 2vw);
   }
   .p-instagram__button {
     margin-right: calc(100% - 250px);
@@ -1517,11 +1529,13 @@ ul {
   .p-attention {
     padding: 65px 120px 65px 65px;
   }
+  .p-attention {
+    padding: 65px 120px 65px 65px;
+  }
   .p-attention__list {
     max-width: 650px;
   }
   .p-step__about {
-    top: 150px;
     -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
             writing-mode: vertical-rl;
@@ -1668,15 +1682,19 @@ ul {
     max-width: 920px;
     margin: 100px auto;
   }
-  .l-instagram {
-    max-width: 1300px;
-    margin: 150px auto;
+  .l-step {
+    max-width: 920px;
+    margin: 100px auto;
   }
   .p-hero--about img {
     height: 100%;
     width: 80vw;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+  .p-hero--history::after {
+    top: 50vh;
+    height: 220px;
   }
   .p-hero__img {
     height: 100%;
@@ -1706,15 +1724,30 @@ ul {
   .p-menu__button.js-active span::before {
     top: -6px;
   }
+  .p-instagram {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
   .p-instagram__grid {
-    grid-template-columns: 200px 200px 200px 200px 200px;
-    grid-template-rows: 200px 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px;
     height: 100%;
+    gap: 2vw;
+    width: calc(1200px + 6vw);
     -webkit-transform: translateY(50px);
             transform: translateY(50px);
   }
+  .p-instagram__title {
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+  }
   .p-instagram__button {
     margin-top: 50px;
+    margin-right: 0px;
+    margin-left: 10vw;
   }
   .p-about__title {
     right: -100px;
@@ -1742,6 +1775,9 @@ ul {
   }
   .p-thanks__text {
     margin-right: 32px;
+  }
+  .p-attention__list {
+    max-width: 850px;
   }
   .p-history__end {
     max-width: 920px;
@@ -1822,6 +1858,12 @@ ul {
   }
   .c-text--history {
     font-size: 2rem;
+  }
+  .c-step__item {
+    width: calc(920px - 64px);
+  }
+  .c-step__wrap {
+    width: calc(920px - 64px);
   }
   .c-history__title {
     width: calc(920px + calc(15% - 20px));

@@ -11,6 +11,9 @@
     @include base.media_tablet{
         padding:65px 120px 65px 65px;
     }
+    @include base.media_tablet{
+        padding:65px 120px 65px 65px;
+    }
     &__title{
         writing-mode: vertical-rl;
         letter-spacing: 0.8rem;
@@ -21,6 +24,9 @@
         max-width: 420px;
         @include base.media_tablet{
         max-width:650px;
+        }
+        @include base.media_PC{
+            max-width: 850px;
         }
     }
     &__detail{

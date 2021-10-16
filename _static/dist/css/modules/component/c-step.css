@@ -233,6 +233,12 @@ ul {
   .c-map {
     height: 300px;
   }
+  .c-step__item {
+    width: calc(920px - 64px);
+  }
+  .c-step__wrap {
+    width: calc(920px - 64px);
+  }
 }
 @media only screen and (min-width: 768px) {
   .c-map {

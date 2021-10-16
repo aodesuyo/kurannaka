@@ -315,7 +315,8 @@ ul {
     width: 100%;
   }
   .p-hero--history::after {
-    top: 50vh;
+    top: 30vh;
+    height: 200px;
   }
   .p-hero__img {
     height: 80%;
@@ -344,6 +345,10 @@ ul {
     width: 80vw;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+  .p-hero--history::after {
+    top: 50vh;
+    height: 220px;
   }
   .p-hero__img {
     height: 100%;

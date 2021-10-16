@@ -64,8 +64,16 @@ ul {
   .p-attention {
     padding: 65px 120px 65px 65px;
   }
+  .p-attention {
+    padding: 65px 120px 65px 65px;
+  }
   .p-attention__list {
     max-width: 650px;
+  }
+}
+@media only screen and (min-width: 1390px) {
+  .p-attention__list {
+    max-width: 850px;
   }
 }
 /*# sourceMappingURL=p-attention.css.map */
